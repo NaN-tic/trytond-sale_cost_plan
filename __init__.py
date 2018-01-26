@@ -10,12 +10,5 @@ def register():
     Pool.register(
         Production,
         Plan,
-        ChangeQuantityStart,
         SaleLine,
-        Sale,
-        ChangeLineQuantityStart,
         module='sale_cost_plan', type_='model')
-    Pool.register(
-        ChangeQuantity,
-        ChangeLineQuantity,
-        module='sale_cost_plan', type_='wizard')

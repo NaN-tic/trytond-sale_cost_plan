@@ -13,28 +13,5 @@
             <field name="inherit" ref="sale.sale_line_view_tree_sequence"/>
             <field name="name">sale_line_tree_sequence</field>
         </record>
-
-        <!-- sale -->
-        <record model="ir.ui.view" id="sale_view_form">
-            <field name="model">sale.sale</field>
-            <field name="type" eval="None"/>
-            <field name="inherit" ref="sale.sale_view_form"/>
-            <field name="name">sale_form</field>
-        </record>
-
-        <!-- relates -->
-        <record model="ir.action.act_window" id="act_production_form">
-            <field name="name">Productions</field>
-            <field name="res_model">production</field>
-            <field name="domain"
-                eval="[('origin.sale.id', 'in', Eval('active_ids'), 'sale.line')]"
-                pyson="1"/>
-        </record>
-        <record model="ir.action.keyword"
-                id="act_open_production_keyword1">
-            <field name="keyword">form_relate</field>
-            <field name="model">sale.sale,-1</field>
-            <field name="action" ref="act_production_form"/>
-        </record>
     </data>
 </tryton>
