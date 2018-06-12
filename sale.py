@@ -22,22 +22,25 @@ class Sale:
         super(Sale, cls).__setup__()
         cls._error_messages.update({
                 'missing_cost_plan': (
-                    'The line "%(line)s" of sale "%(sale)s" doesn\'t have '
+                    'Lines "%(lines)s" of sale "%(sale)s" doesn\'t have '
                     'Cost Plan, so it won\'t generate any production.'),
                 })
 
     @classmethod
     def confirm(cls, sales):
         for sale in sales:
+            missing_cost_plan = []
             for line in sale.lines:
                 if (line.type == 'line' and line.product
                         and not getattr(line.product, 'purchasable', False)
                         and not line.cost_plan):
-                    cls.raise_user_warning('missing_cost_plan%s' % sale.id,
-                        'missing_cost_plan', {
-                            'sale': sale.rec_name,
-                            'line': line.rec_name,
-                            })
+                    missing_cost_plan.append(line.product.rec_name)
+            if missing_cost_plan:
+                cls.raise_user_warning('missing_cost_plan%s' % sale.id,
+                    'missing_cost_plan', {
+                        'sale': sale.rec_name,
+                        'lines': ', '.join(missing_cost_plan),
+                        })
         super(Sale, cls).confirm(sales)
 
     @classmethod
