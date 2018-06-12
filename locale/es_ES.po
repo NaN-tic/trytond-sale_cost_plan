@@ -34,10 +34,10 @@ msgstr "¡No hay producciones modificables!"
 
 msgctxt "error:sale.sale:"
 msgid ""
-"The line \"%(line)s\" of sale \"%(sale)s\" doesn't have Cost Plan, so it "
+"Lines \"%(lines)s\" of sale \"%(sale)s\" doesn't have Cost Plan, so it "
 "won't generate any production."
 msgstr ""
-"La línea \"%(line)s\" de la venta \"%(sale)s\" no tiene Plan de coste, por "
+"Las líneas \"%(lines)s\" de la venta \"%(sale)s\" no tiene Plan de coste, por "
 "lo que no se generará ninguna producción."
 
 msgctxt "field:production,cost_plan:"
@@ -50,7 +50,7 @@ msgstr "Cantidad actual"
 
 msgctxt "field:production.change_quantity.start,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:production.change_quantity.start,new_quantity:"
 msgid "New Quantity"
