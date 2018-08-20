@@ -94,7 +94,6 @@ Create product::
     >>> template.purchasable = True
     >>> template.salable = True
     >>> template.list_price = Decimal(30)
-    >>> template.cost_price = Decimal(20)
     >>> template.cost_price_method = 'fixed'
     >>> template.account_expense = expense
     >>> template.account_revenue = revenue
@@ -112,7 +111,6 @@ Create Components::
     >>> templateA.default_uom = meter
     >>> templateA.type = 'goods'
     >>> templateA.list_price = Decimal(2)
-    >>> templateA.cost_price = Decimal(1)
     >>> templateA.save()
     >>> componentA.template = templateA
     >>> componentA.save()
@@ -123,7 +121,6 @@ Create Components::
     >>> templateB.default_uom = meter
     >>> templateB.type = 'goods'
     >>> templateB.list_price = Decimal(2)
-    >>> templateB.cost_price = Decimal(1)
     >>> templateB.save()
     >>> componentB.template = templateB
     >>> componentB.save()
@@ -134,7 +131,6 @@ Create Components::
     >>> template1.default_uom = unit
     >>> template1.type = 'goods'
     >>> template1.list_price = Decimal(5)
-    >>> template1.cost_price = Decimal(2)
     >>> template1.save()
     >>> component1.template = template1
     >>> component1.save()
@@ -145,7 +141,6 @@ Create Components::
     >>> template2.default_uom = meter
     >>> template2.type = 'goods'
     >>> template2.list_price = Decimal(7)
-    >>> template2.cost_price = Decimal(5)
     >>> template2.save()
     >>> component2.template = template2
     >>> component2.save()
