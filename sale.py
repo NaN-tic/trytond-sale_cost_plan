@@ -9,10 +9,9 @@ from .tools import prepare_vals
 
 __all__ = ['Sale', 'SaleLine', 'Plan',
     'ChangeLineQuantityStart', 'ChangeLineQuantity']
-__metaclass__ = PoolMeta
 
 
-class Sale:
+class Sale(metaclass=PoolMeta):
     __name__ = 'sale.sale'
     productions = fields.Function(fields.One2Many('production', None,
         'Productions'), 'get_productions')
@@ -65,7 +64,7 @@ class Sale:
         return productions
 
 
-class SaleLine:
+class SaleLine(metaclass=PoolMeta):
     __name__ = 'sale.line'
 
     cost_plan = fields.Many2One('product.cost.plan', 'Cost Plan',
@@ -167,7 +166,7 @@ class SaleLine:
         return super(SaleLine, cls).copy(lines, default=default)
 
 
-class Plan:
+class Plan(metaclass=PoolMeta):
     __name__ = 'product.cost.plan'
 
     @classmethod
@@ -238,7 +237,7 @@ class Plan:
         return res
 
 
-class ChangeLineQuantityStart:
+class ChangeLineQuantityStart(metaclass=PoolMeta):
     __name__ = 'sale.change_line_quantity.start'
 
     def on_change_with_minimal_quantity(self):
@@ -258,7 +257,7 @@ class ChangeLineQuantityStart:
         return max(minimal_quantity, produced_quantity)
 
 
-class ChangeLineQuantity:
+class ChangeLineQuantity(metaclass=PoolMeta):
     __name__ = 'sale.change_line_quantity'
 
     @classmethod

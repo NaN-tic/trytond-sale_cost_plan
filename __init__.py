@@ -1,21 +1,23 @@
 #The COPYRIGHT file at the top level of this repository contains the full
 #copyright notices and license terms.
-
 from trytond.pool import Pool
-from .production import *
-from .sale import *
-
+from . import production
+from . import sale
 
 def register():
     Pool.register(
-        Production,
-        Plan,
-        ChangeQuantityStart,
-        SaleLine,
-        Sale,
-        ChangeLineQuantityStart,
+        production.Production,
+        sale.Plan,
+        sale.SaleLine,
+        sale.Sale,
         module='sale_cost_plan', type_='model')
     Pool.register(
-        ChangeQuantity,
-        ChangeLineQuantity,
+        production.ChangeQuantityStart,
+        sale.ChangeLineQuantityStart,
+        depends=['sale_change_quantity'],
+        module='sale_cost_plan', type_='model')
+    Pool.register(
+        production.ChangeQuantity,
+        sale.ChangeLineQuantity,
+        depends=['sale_change_quantity'],
         module='sale_cost_plan', type_='wizard')

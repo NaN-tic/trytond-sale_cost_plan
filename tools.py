@@ -19,7 +19,7 @@ def prepare_vals(values, to_write=False):
                     res = [x for _, x in values['add']]
         else:
             res = {}
-            for key, value in values.iteritems():
+            for key, value in values.items():
                 if 'rec_name' in key or key == 'id':
                     continue
                 value = prepare_vals(value)

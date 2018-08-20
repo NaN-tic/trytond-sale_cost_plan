@@ -228,7 +228,7 @@ Sale product with first plan::
     >>> sale.click('confirm')
     >>> sale.click('process')
     >>> sale.state
-    u'processing'
+    'processing'
     >>> sale.reload()
     >>> len(sale.productions) == 1
     True

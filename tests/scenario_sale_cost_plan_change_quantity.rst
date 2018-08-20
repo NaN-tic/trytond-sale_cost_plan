@@ -213,7 +213,7 @@ Sale product with the plan::
     >>> sale.click('confirm')
     >>> sale.click('process')
     >>> sale.state
-    u'processing'
+    'processing'
     >>> sale_line, = sale.lines
     >>> production, = sale.productions
     >>> production.product == product

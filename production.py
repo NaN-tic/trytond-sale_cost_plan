@@ -7,10 +7,9 @@ from trytond.transaction import Transaction
 from trytond.wizard import Button, StateTransition, StateView, Wizard
 
 __all__ = ['Production', 'ChangeQuantityStart', 'ChangeQuantity']
-__metaclass__ = PoolMeta
 
 
-class Production:
+class Production(metaclass=PoolMeta):
     __name__ = 'production'
 
     cost_plan = fields.Many2One('product.cost.plan', 'Cost Plan',
