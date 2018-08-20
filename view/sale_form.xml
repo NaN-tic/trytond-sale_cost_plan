@@ -3,7 +3,7 @@
 this repository contains the full copyright notices and license terms. -->
 <data>
     <xpath expr="/form/notebook" position="inside">
-        <page id="productions" string="Productions">
+        <page name="productions">
             <field name="productions"/>
         </page>
     </xpath>
