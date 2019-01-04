@@ -8,30 +8,4 @@
             <field name="name">production_form</field>
         </record>
     </data>
-    <data depends="sale_change_quantity">
-        <!-- production.change_quantity -->
-        <record model="ir.ui.view" id="production_change_quantity_start_view_form">
-            <field name="model">production.change_quantity.start</field>
-            <field name="type">form</field>
-            <field name="name">production_change_quantity_start_form</field>
-        </record>
-
-        <record model="ir.action.wizard" id="wizard_production_change_quantity">
-            <field name="name">Change Sale Quantity</field>
-            <field name="wiz_name">production.change_quantity</field>
-            <field name="model">production</field>
-        </record>
-        <record model="ir.action.keyword"
-                id="act_wizard_production_change_quantity_keyword">
-            <field name="keyword">form_action</field>
-            <field name="model">production,-1</field>
-            <field name="action" ref="wizard_production_change_quantity"/>
-        </record>
-        <record model="ir.action-res.group"
-                id="wizard_production_change_quantity-group_sale_change_line_quantity">
-            <field name="action" ref="wizard_production_change_quantity"/>
-            <field name="group"
-                ref="sale_change_quantity.group_sale_change_line_quantity"/>
-        </record>
-    </data>
 </tryton>
