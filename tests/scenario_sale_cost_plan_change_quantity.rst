@@ -23,7 +23,8 @@ Imports::
 
 Install production Module::
 
-    >>> config = activate_modules(['sale_cost_plan', 'sale_change_quantity'])
+    >>> config = activate_modules(['sale_cost_plan', 'sale_supply_production',
+    ...     'sale_change_quantity'])
 
 Create company::
 

@@ -222,11 +222,4 @@ Sale product with first plan::
     >>> sale.state
     u'processing'
     >>> sale.reload()
-    >>> len(sale.productions) == 1
-    True
-    >>> production, = sale.productions
-    >>> production.product == product
-    True
-    >>> production.quantity == 2.0
-    True
-
+    
