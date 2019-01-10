@@ -4,6 +4,8 @@ from trytond.model import fields
 from trytond.pool import PoolMeta, Pool
 from trytond.pyson import Eval
 from trytond.transaction import Transaction
+from trytond.i18n import gettext
+from trytond.exceptions import UserError
 
 from .tools import prepare_vals
 
@@ -38,23 +40,15 @@ class SaleLine(metaclass=PoolMeta):
 class Plan(metaclass=PoolMeta):
     __name__ = 'product.cost.plan'
 
-    @classmethod
-    def __setup__(cls):
-        super(Plan, cls).__setup__()
-        cls._error_messages.update({
-                'cannot_create_productions_missing_bom': ('No production can '
-                    'be created because Product Cost Plan "%s" has no BOM '
-                    'assigned.')
-                })
-
     def get_elegible_productions(self, unit, quantity):
         """
         Returns a list of dicts with the required data to create all the
         productions required for this plan
         """
         if not self.bom:
-            self.raise_user_error('cannot_create_productions_missing_bom',
-                self.rec_name)
+            raise UserError(gettext(
+                'sale_cost_plan.cannot_create_productions_missing_bom',
+                plan=self.rec_name))
 
         prod = {
             'product': self.product,
