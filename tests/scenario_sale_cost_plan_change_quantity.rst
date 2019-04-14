@@ -212,7 +212,6 @@ Sale product with the plan::
     >>> sale_line.quantity = 2.0
     >>> sale.click('quote')
     >>> sale.click('confirm')
-    >>> sale.click('process')
     >>> sale.state
     'processing'
     >>> sale_line, = sale.lines

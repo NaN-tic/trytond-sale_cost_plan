@@ -226,8 +226,6 @@ Sale product with first plan::
     >>> sale.save()
     >>> sale.click('quote')
     >>> sale.click('confirm')
-    >>> sale.click('process')
     >>> sale.state
     'processing'
     >>> sale.reload()
-    
