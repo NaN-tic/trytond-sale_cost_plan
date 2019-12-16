@@ -116,7 +116,7 @@ msgstr "Producciones"
 
 msgctxt "wizard_button:production.change_quantity,start,end:"
 msgid "Cancel"
-msgstr "Cancel·lar"
+msgstr "Cancelar"
 
 msgctxt "wizard_button:production.change_quantity,start,modify:"
 msgid "Modify"
