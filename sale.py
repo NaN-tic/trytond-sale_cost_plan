@@ -3,13 +3,11 @@
 from trytond.model import fields
 from trytond.pool import PoolMeta, Pool
 from trytond.pyson import Eval
-from trytond.transaction import Transaction
 from trytond.i18n import gettext
 from trytond.exceptions import UserError
 
-from .tools import prepare_vals
-
 __all__ = ['SaleLine', 'Plan']
+
 
 class SaleLine(metaclass=PoolMeta):
     __name__ = 'sale.line'
@@ -36,6 +34,7 @@ class SaleLine(metaclass=PoolMeta):
         super(SaleLine, self).on_change_product()
         if plan:
             self.cost_plan = plan
+
 
 class Plan(metaclass=PoolMeta):
     __name__ = 'product.cost.plan'

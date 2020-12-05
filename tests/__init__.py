@@ -2,3 +2,5 @@
 # copyright notices and license terms.
 
 from .test_sale_cost_plan import suite
+
+__all__ = ['suite']
