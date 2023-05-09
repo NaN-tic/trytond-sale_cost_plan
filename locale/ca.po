@@ -20,7 +20,7 @@ msgid ""
 "BOM assigned."
 msgstr ""
 "No es pot crear la producció perquè el pla de costos del producte "
-"\"\"%(cost_plan)s\"\" no té una llista de materials assignada."
+"\"%(plan)s\" no té una llista de materials assignada."
 
 msgctxt "view:sale.sale:"
 msgid "Productions"
