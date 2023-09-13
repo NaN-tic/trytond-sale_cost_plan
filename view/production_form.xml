@@ -1,5 +1,5 @@
 <data>
-    <xpath expr="/form/field[@name='uom']" position="after">
+    <xpath expr="/form/field[@name='unit']" position="after">
         <label name="cost_plan"/>
         <field name="cost_plan"/>
     </xpath>
