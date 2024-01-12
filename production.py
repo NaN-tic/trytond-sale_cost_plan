@@ -13,6 +13,5 @@ class Production(metaclass=PoolMeta):
     cost_plan = fields.Many2One('product.cost.plan', 'Cost Plan',
         states={
             'readonly': ~Eval('state').in_(['request', 'draft']),
-            },
-        depends=['state'])
+            })
 
