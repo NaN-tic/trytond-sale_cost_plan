@@ -18,8 +18,7 @@ class SaleLine(metaclass=PoolMeta):
             ],
         states={
             'invisible': Eval('type') != 'line',
-            },
-        depends=['type', 'product'])
+            })
 
     @fields.depends('cost_plan', 'product')
     def on_change_product(self):
