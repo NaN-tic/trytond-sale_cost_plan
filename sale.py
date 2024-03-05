@@ -23,16 +23,16 @@ class SaleLine(metaclass=PoolMeta):
     @fields.depends('cost_plan', 'product')
     def on_change_product(self):
         CostPlan = Pool().get('product.cost.plan')
+
         plan = None
         if self.product:
             plans = CostPlan.search([('product', '=', self.product.id)],
                 order=[('number', 'DESC')], limit=1)
             if plans:
-                plan = plans[0]
-                self.cost_plan = plan
+                plan, = plans
+        self.cost_plan = plan
+
         super(SaleLine, self).on_change_product()
-        if plan:
-            self.cost_plan = plan
 
 
 class Plan(metaclass=PoolMeta):
