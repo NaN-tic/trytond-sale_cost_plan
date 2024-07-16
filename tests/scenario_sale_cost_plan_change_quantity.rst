@@ -92,6 +92,7 @@ Create product::
     >>> template.type = 'goods'
     >>> template.salable = True
     >>> template.producible = True
+    >>> template.supply_production_on_sale = True
     >>> template.list_price = Decimal(30)
     >>> template.cost_price_method = 'fixed'
     >>> template.account_category = account_category
@@ -129,6 +130,7 @@ Create Components::
     >>> template1.default_uom = unit
     >>> template1.type = 'goods'
     >>> template1.producible = True
+    >>> template.supply_production_on_sale = True
     >>> template1.list_price = Decimal(5)
     >>> template1.save()
     >>> component1.template = template1
