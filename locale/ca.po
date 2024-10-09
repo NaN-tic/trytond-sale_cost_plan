@@ -10,10 +10,6 @@ msgctxt "field:sale.line,cost_plan:"
 msgid "Cost Plan"
 msgstr "Pla de costos"
 
-msgctxt "model:ir.action,name:"
-msgid "Productions"
-msgstr "Produccions"
-
 msgctxt "model:ir.message,text:cannot_create_productions_missing_bom"
 msgid ""
 "No production can be created because Product Cost Plan \"%(plan)s\" has no "
