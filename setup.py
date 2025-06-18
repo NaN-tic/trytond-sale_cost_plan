@@ -10,7 +10,7 @@ from configparser import ConfigParser
 MODULE = 'sale_cost_plan'
 PREFIX = 'nantic'
 MODULE2PREFIX = {
-    'product_cost_plan_margin',
+    'product_cost_plan_margin': 'nantic',
 }
 
 
@@ -79,7 +79,7 @@ setup(name='%s_%s' % (PREFIX, MODULE),
         ],
     package_data={
         'trytond.modules.%s' % MODULE: (info.get('xml', [])
-            + ['tryton.cfg', 'locale/*.po', 'tests/*.rst']),
+            + ['tryton.cfg', 'view/*.xml', 'locale/*.po', 'tests/*.rst']),
         },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
